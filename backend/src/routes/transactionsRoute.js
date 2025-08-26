@@ -1,3 +1,4 @@
+// Express router module that defines API endpoints for handling transactions
 import express from "express";
 import {
   createTransaction,
@@ -6,7 +7,7 @@ import {
   getTransactionsByUserId,
 } from "../controllers/transactionsController.js";
 
-const router = express.Router();
+const router = express.Router();  // router object
 
 router.get("/:userId", getTransactionsByUserId);
 router.post("/", createTransaction);
