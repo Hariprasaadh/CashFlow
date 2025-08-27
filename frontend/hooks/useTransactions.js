@@ -1,9 +1,8 @@
 import { useCallback, useState } from "react";
-import { Alert } from "react-native";
 import { API_URL } from "../constants/api";
 // const API_URL = "http://localhost:5001/api";
 
-export const useTransactions = (userId) => {
+export const useTransactions = (userId, { showQuickSuccess, showError } = {}) => {
   const [transactions, setTransactions] = useState([]);
   const [summary, setSummary] = useState({
     balance: 0,
@@ -55,12 +54,27 @@ export const useTransactions = (userId) => {
 
       // Refresh data after deletion
       loadData();
-      Alert.alert("Success", "Transaction deleted successfully");
+      showQuickSuccess && showQuickSuccess("Transaction deleted successfully");
     } catch (error) {
       console.error("Error deleting transaction:", error);
-      Alert.alert("Error", error.message);
+      showError && showError("Error", error.message);
     }
   };
 
-  return { transactions, summary, isLoading, loadData, deleteTransaction };
+  const addTransaction = useCallback((newTransaction) => {
+    // Add transaction optimistically to the local state
+    setTransactions(prev => [newTransaction, ...prev]);
+    
+    // Update summary optimistically
+    setSummary(prev => {
+      const amount = newTransaction.amount;
+      return {
+        balance: prev.balance + amount,
+        income: amount > 0 ? prev.income + amount : prev.income,
+        expenses: amount < 0 ? prev.expenses + Math.abs(amount) : prev.expenses,
+      };
+    });
+  }, []);
+
+  return { transactions, summary, isLoading, loadData, deleteTransaction, addTransaction };
 };
