@@ -20,6 +20,13 @@ export const styles = StyleSheet.create({
     marginVertical: 15,
     textAlign: "center",
   },
+  subtitle: {
+    fontSize: 16,
+    color: COLORS.textLight,
+    textAlign: "center",
+    marginBottom: 20,
+    lineHeight: 24,
+  },
   input: {
     backgroundColor: COLORS.white,
     borderRadius: 12,
@@ -29,6 +36,60 @@ export const styles = StyleSheet.create({
     borderColor: COLORS.border,
     fontSize: 16,
     color: COLORS.text,
+  },
+  passwordContainer: {
+    position: 'relative',
+    marginBottom: 16,
+  },
+  passwordInput: {
+    backgroundColor: COLORS.white,
+    borderRadius: 12,
+    padding: 15,
+    paddingRight: 50,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    fontSize: 16,
+    color: COLORS.text,
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 15,
+    top: 15,
+    zIndex: 1,
+  },
+  codeInputContainer: {
+    marginBottom: 20,
+  },
+  codeLabel: {
+    fontSize: 16,
+    color: COLORS.textLight,
+    textAlign: 'center',
+    marginBottom: 10,
+    fontWeight: '500',
+  },
+  codeInputWrapper: {
+    position: 'relative',
+  },
+  codeInput: {
+    backgroundColor: COLORS.white,
+    borderRadius: 12,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    fontSize: 24,
+    color: COLORS.text,
+    textAlign: 'center',
+    letterSpacing: 8,
+    fontWeight: '600',
+  },
+  codeInputComplete: {
+    borderColor: COLORS.income,
+    backgroundColor: '#F0FFF4',
+  },
+  codeCompleteIcon: {
+    position: 'absolute',
+    right: 15,
+    top: 18,
   },
   errorInput: {
     borderColor: COLORS.expense,
@@ -40,6 +101,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     marginBottom: 20,
+  },
+  buttonActive: {
+    backgroundColor: COLORS.income,
+    transform: [{ scale: 1.02 }],
   },
   buttonText: {
     color: COLORS.white,
@@ -61,32 +126,11 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
-  verificationContainer: {
-    flex: 1,
-    backgroundColor: COLORS.background,
-    padding: 20,
-    justifyContent: "center",
-    alignItems: "center",
+  disabledButton: {
+    opacity: 0.5,
   },
-  verificationTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: COLORS.text,
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  verificationInput: {
-    backgroundColor: COLORS.white,
-    borderRadius: 12,
-    padding: 15,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    fontSize: 16,
-    color: COLORS.text,
-    width: "100%",
-    textAlign: "center",
-    letterSpacing: 2,
+  disabledText: {
+    color: COLORS.textLight,
   },
 
   // Error styles
