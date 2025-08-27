@@ -1,8 +1,6 @@
 import { useCallback, useState } from "react";
 import { Alert } from "react-native";
-
-const API_URL = "https://cashflow-96lm.onrender.com/api";
-
+import { API_URL } from "../constants/api";
 // const API_URL = "http://localhost:5001/api";
 
 export const useTransactions = (userId) => {
