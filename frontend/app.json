@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "CashFlow",
+    "slug": "cashflow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "frontend",
+    "scheme": "cashflow",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -23,7 +23,8 @@
       "statusBar": {
         "barStyle": "dark-content",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.hariprasaadh_k.cashflow"
     },
     "web": {
       "bundler": "metro",
@@ -44,6 +45,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "84821559-d218-48d3-b0ee-9f1d4c9bf546"
+      }
     }
   }
 }
